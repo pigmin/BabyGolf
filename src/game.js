@@ -14,7 +14,7 @@ import { levels } from './levels';
 
 import { InputController } from './inputcontroller';
 import { SoundManager } from './soundmanager';
-import { FollowCamera2 } from './followCamera2';
+
 
 
 
@@ -190,7 +190,7 @@ class Game {
         GlobalManager.scene.ambientColor = new Color3(1, 1, 1);
 
         // This creates and positions a free camera (non-mesh)
-        GlobalManager.gameCamera = new FollowCamera2("FollowCam", new Vector3(0, 250, 15), GlobalManager.scene);
+        GlobalManager.gameCamera = new FollowCamera("FollowCam", new Vector3(0, 250, 15), GlobalManager.scene);
         GlobalManager.gameCamera.heightOffset = 50.0;
         GlobalManager.gameCamera.lowerHeightOffsetLimit = 40.0;
         GlobalManager.gameCamera.upperHeightOffsetLimit = 60;
