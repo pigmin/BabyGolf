@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "lib": [ // choose our default ECMA/libraries to import
+            "dom", // mandatory for all browser-based apps
+            "es6" // mandatory for targeting ES6
+        ],
+        "module": "ESNext",
+        "noResolve": false,
+        "moduleResolution": "node",
+        "strict": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "rootDir": "./src",
+        "esModuleInterop": true,
+        "allowJs": true,
+        "forceConsistentCasingInFileNames": true,
+    },
+    "include": [       
+        "src",
+    ]
+}
