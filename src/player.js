@@ -20,9 +20,11 @@ class Player {
 
     }
 
-    respawn(spawnPoint, exitMesh) {
+    respawn(spawnPoint, holeMesh) {
         this.spawnPoint = spawnPoint;
-        this.exitMesh = exitMesh;
+        this.holeMesh = holeMesh;
+
+        this.mesh.position.copyFrom(this.spawnPoint);
     }
 
     getPosition() {
@@ -30,7 +32,7 @@ class Player {
     }
 
     async init() {
-
+        this.mesh = MeshBuilder.CreateSphere("ballP1", { diameter : 0.427 });
     }
 
     update() {
@@ -43,8 +45,8 @@ class Player {
     }
 
     checkCollisions() {
-        if (this.exitMesh) {
-            if (this.mesh.intersectsMesh(this.exitMesh, false)) {
+        if (this.holeMesh) {
+            if (this.mesh.intersectsMesh(this.holeMesh, false)) {
                 console.log("EXIT !!!");
                 GlobalManager.gameState = States.STATE_EXITED;
             }

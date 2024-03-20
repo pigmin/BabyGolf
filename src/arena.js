@@ -10,7 +10,7 @@ class Arena {
 
     assetContainer = null;
 
-    exitMesh = null;
+    holeMesh = null;
     doorTriggers = [];
 
     navmeshdebug = null;
@@ -66,10 +66,10 @@ class Arena {
                     if (extras.collisions)
                         childMesh.checkCollisions = true;
 
-                    if (extras.exit) {
+                    if (extras.hole) {
                         childMesh.checkCollisions = false;
                         childMesh.visibility = 0.0; 
-                        this.exitMesh = childMesh;
+                        this.holeMesh = childMesh;
                     }
                     else if (extras.door_trigger) {
                         childMesh.checkCollisions = false;
@@ -104,7 +104,7 @@ class Arena {
     disposeLevel() {
         if (this.navmeshdebug)
             this.navmeshdebug.dispose();
-        this.exitMesh = null;
+        this.holeMesh = null;
         this.doorTriggers = [];
         for (let childMesh of this.assetContainer.meshes) {
 
@@ -123,8 +123,8 @@ class Arena {
             return this.playerSpawnPoint2.clone();
     }
 
-    getExitMesh() {
-        return this.exitMesh;
+    getHoleMesh() {
+        return this.holeMesh;
     }
 
     update() {

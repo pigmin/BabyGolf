@@ -1,4 +1,4 @@
-import { Color3, CubeTexture, DirectionalLight, Engine, FollowCamera, FreeCamera,  GlowLayer,  RecastJSPlugin,  Scene, ScenePerformancePriority, ShadowGenerator, Vector3 } from "@babylonjs/core";
+import { Color3, CubeTexture, DirectionalLight, Engine, FollowCamera, FreeCamera, Scene, ScenePerformancePriority, ShadowGenerator, Vector3 } from "@babylonjs/core";
 import { Inspector } from "@babylonjs/inspector";
 import { HavokPlugin } from '@babylonjs/core/Physics/v2/Plugins/havokPlugin';
 import HavokPhysics from "@babylonjs/havok";
@@ -77,7 +77,7 @@ class Game {
         //Player creation and init
         this.player1 = new Player(1);
         await this.player1.init();
-        this.player1.respawn(this.arena.getSpawnPoint(1), this.arena.getExitMesh());
+        this.player1.respawn(this.arena.getSpawnPoint(1), this.arena.getHoleMesh());
 
         //Ennemy(ies) creation and init
         GlobalManager.engine.hideLoadingUI();
@@ -265,7 +265,7 @@ class Game {
         this.arena.loadLevel(levels[this.currentLevel]).then( () => {
 
 
-            this.player1.respawn(this.arena.getSpawnPoint(1), this.arena.getExitMesh());
+            this.player1.respawn(this.arena.getSpawnPoint(1), this.arena.getHoleMesh());
 
             GlobalManager.engine.hideLoadingUI();
             GlobalManager.gameState = States.STATE_LEVEL_READY;

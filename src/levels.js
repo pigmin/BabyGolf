@@ -1,5 +1,5 @@
 
-import arenaLevel1Url from "../assets/models/arena_level1.glb";
+import arenaLevel1Url from "../assets/models/course1.glb";
 import arenaLevel2Url from "../assets/models/arena_level2.glb";
 
 const level1 = {
